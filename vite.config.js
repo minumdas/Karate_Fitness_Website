@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: "/karate_fitness_website/"
+  base: "/Karate_Fitness_Website/"
 })

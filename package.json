@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://minumdas.github.io/karate_fitness_website",
+  "homepage": "https://minumdas.github.io/Karate_Fitness_Website",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
