@@ -1,0 +1,178 @@
+nav {
+    width: 100%;
+    color: white;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+}
+
+.navbar {
+    background-color: var(--navbar-bg);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Styling */
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    font-family: var(--font-heading);
+    text-decoration: none !important;
+    letter-spacing: -0.5px;
+    transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+    transform: scale(1.02);
+}
+
+.navbar-logo img {
+    height: 45px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.navbar-logo span {
+    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Menu Styling */
+.navbar-menu {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu li {
+    list-style: none;
+}
+
+.navbar-menu a {
+    position: relative;
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 1.05rem;
+    text-decoration: none !important;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect - Pill Background */
+.navbar-menu a:hover {
+    background-color: rgba(211, 47, 47, 0.1);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.navbar-menu a.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* CTA Button in Navbar */
+.navbar .btn {
+    padding: 10px 25px;
+    font-size: 0.95rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(211, 47, 47, 0.2);
+    text-decoration: none !important;
+    background-color: var(--primary-color);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.navbar .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(211, 47, 47, 0.4);
+    background-color: #B71C1C;
+}
+
+/* Theme Switch Styles */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 24px;
+    position: relative;
+    width: 50px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+
+.slider:before {
+    background-color: #fff;
+    bottom: 2px;
+    content: "";
+    height: 20px;
+    left: 2px;
+    position: absolute;
+    transition: .4s;
+    width: 20px;
+}
+
+input:checked+.slider {
+    background-color: var(--primary-color);
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none;
+    }
+
+    .navbar-logo {
+        font-size: 1.5rem;
+    }
+
+    .navbar-logo img {
+        height: 35px;
+    }
+}

@@ -1,0 +1,193 @@
+:root {
+  --primary-color: #D32F2F;
+  /* Strong Red */
+  --secondary-color: #212121;
+  /* Dark Gray/Black */
+  --accent-color: #FFC107;
+  /* Amber/Gold */
+  --text-light: #F5F5F5;
+  --text-dark: #212121;
+  --bg-light: #FAFAFA;
+  --bg-dark: #121212;
+  --navbar-bg: rgba(255, 255, 255, 0.95);
+  --card-bg: #ffffff;
+  --font-main: 'Inter', sans-serif;
+  --font-heading: 'Oswald', sans-serif;
+  --transition: all 0.3s ease-in-out;
+}
+
+[data-theme='dark'] {
+  --secondary-color: #f5f5f5;
+  /* Invert for dark mode text */
+  --text-dark: #f5f5f5;
+  --bg-light: #121212;
+  /* Main background becomes dark */
+  --navbar-bg: rgba(18, 18, 18, 0.95);
+  --card-bg: #1e1e1e;
+  --text-light: #e0e0e0;
+}
+
+[data-theme='dark'] .navbar {
+  background: rgba(0, 0, 0, 0.8) !important;
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Force text visibility in dark mode */
+[data-theme='dark'] h1,
+[data-theme='dark'] h2,
+[data-theme='dark'] h3,
+[data-theme='dark'] h4,
+[data-theme='dark'] h5,
+[data-theme='dark'] h6,
+[data-theme='dark'] .navbar-menu a,
+[data-theme='dark'] .section-title {
+  color: #ffffff !important;
+}
+
+[data-theme='dark'] p {
+  color: #e0e0e0;
+}
+
+/* Explicitly set body background and text for dark mode to prevent variable issues */
+[data-theme='dark'] body {
+  background: radial-gradient(circle at 50% 0%, #1a1a1a 0%, #000000 100%) !important;
+  color: #f5f5f5 !important;
+  background-attachment: fixed;
+}
+
+/* Add glow effect to cards in dark mode */
+[data-theme='dark'] .sensei-card,
+[data-theme='dark'] .program-card {
+  background: rgba(30, 30, 30, 0.6) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(211, 47, 47, 0.3) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme='dark'] .sensei-card:hover {
+  box-shadow: 0 0 20px rgba(211, 47, 47, 0.4) !important;
+  border-color: var(--primary-color) !important;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--secondary-color);
+  /* Ensure headings use theme color */
+}
+
+a {
+  text-decoration: none !important;
+  color: inherit;
+  transition: var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.btn:hover {
+  background-color: #B71C1C;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(211, 47, 47, 0.3);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+  /* This becomes #f5f5f5 in dark mode */
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: var(--primary-color);
+  margin: 10px auto 0;
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.py-5 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.mb-4 {
+  margin-bottom: 2rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Sensei Card Hover Effects */
+.sensei-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2) !important;
+}
+
+.sensei-card:hover .sensei-img {
+  transform: scale(1.05);
+}

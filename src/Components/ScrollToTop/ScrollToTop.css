@@ -1,0 +1,36 @@
+.scroll-btn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: var(--primary-color);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+    z-index: 1000;
+    animation: fadeIn 0.3s;
+}
+
+.scroll-btn:hover {
+    background-color: #B71C1C;
+    transform: translateY(-5px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
